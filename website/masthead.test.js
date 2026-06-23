@@ -32,3 +32,15 @@ test('sleep hero video is contained by the hero block instead of fixed to the vi
   assert.match(match.groups.rules, /position:\s*absolute/);
   assert.doesNotMatch(match.groups.rules, /position:\s*fixed/);
 });
+
+test('website pages request versioned stylesheet to avoid stale production CSS', () => {
+  for (const page of ['apnee-du-sommeil.html', 'blog.html', 'commander.html']) {
+    const html = fs.readFileSync(path.join(__dirname, page), 'utf8');
+
+    assert.match(
+      html,
+      /<link rel="stylesheet" href="\.\/styles\.css\?v=[^"]+" \/>/,
+      `${page} should cache-bust styles.css`,
+    );
+  }
+});
