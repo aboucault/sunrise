@@ -51,3 +51,24 @@ test('website pages request versioned stylesheet to avoid stale production CSS',
     );
   }
 });
+
+test('quiz result gives recommended free articles before the kit call to action', () => {
+  const js = fs.readFileSync(path.join(__dirname, 'quiz.js'), 'utf8');
+  const recommendationsIndex = js.indexOf('recommended-articles');
+  const kitIndex = js.indexOf('Commander le kit Sunrise');
+
+  assert.ok(recommendationsIndex > -1, 'expected recommended article cards in result');
+  assert.ok(kitIndex > -1, 'expected kit call to action to remain available');
+  assert.ok(
+    recommendationsIndex > js.indexOf('questionRoot.querySelector'),
+    'expected recommendations to be inserted into the rendered result',
+  );
+  assert.match(js, /querySelector\('\.result-action'\)\.insertAdjacentHTML\(\s*'beforebegin'/);
+});
+
+test('versioned stylesheet includes quiz result recommendation layout', () => {
+  const css = fs.readFileSync(path.join(__dirname, 'styles-2208b4e.css'), 'utf8');
+
+  assert.match(css, /\.recommended-articles\s*\{/);
+  assert.match(css, /\.result-article-card\s*\{/);
+});
