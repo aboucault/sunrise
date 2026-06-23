@@ -19,24 +19,29 @@ const contentTypes = {
 };
 
 const routeMap = {
-  '/': '/website/apnee-du-sommeil.html',
-  '/apnee-du-sommeil': '/website/apnee-du-sommeil.html',
-  '/apnee-du-sommeil.html': '/website/apnee-du-sommeil.html',
-  '/blog': '/website/blog.html',
-  '/blog.html': '/website/blog.html',
-  '/commander': '/website/commander.html',
-  '/commander.html': '/website/commander.html',
-  '/styles.css': '/website/styles.css',
-  '/masthead.js': '/website/masthead.js',
-  '/quiz.js': '/website/quiz.js',
-  '/app': '/app/index.html',
-  '/app.html': '/app/index.html'
+  '/': 'website/apnee-du-sommeil.html',
+  '/apnee-du-sommeil': 'website/apnee-du-sommeil.html',
+  '/apnee-du-sommeil.html': 'website/apnee-du-sommeil.html',
+  '/blog': 'website/blog.html',
+  '/blog.html': 'website/blog.html',
+  '/commander': 'website/commander.html',
+  '/commander.html': 'website/commander.html',
+  '/styles.css': 'website/styles.css',
+  '/masthead.js': 'website/masthead.js',
+  '/quiz.js': 'website/quiz.js',
+  '/app': 'app/index.html',
+  '/app.html': 'app/index.html',
+  '/app/styles.css': 'app/styles.css',
+  '/assets/favicon.ico': 'assets/favicon.ico'
 };
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host || '127.0.0.1'}`);
   const requestPath = routeMap[url.pathname] || url.pathname;
-  const safePath = path.normalize(requestPath).replace(/^(\.\.[/\\])+/, '');
+  const safePath = path
+    .normalize(requestPath)
+    .replace(/^(\.\.[/\\])+/, '')
+    .replace(/^[/\\]+/, '');
   const filePath = path.join(root, safePath);
 
   if (!filePath.startsWith(root)) {
