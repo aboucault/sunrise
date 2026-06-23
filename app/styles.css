@@ -17,57 +17,269 @@ body {
 
 .phone {
   width: min(390px, calc(100vw - 32px));
-  min-height: 760px;
+  height: min(860px, calc(100vh - 32px));
+  overflow-y: auto;
   padding: 22px;
   border-radius: 34px;
-  background: #09033d;
+  border: 8px solid #05050b;
+  background:
+    radial-gradient(circle at 70% 34%, rgba(255, 111, 91, 0.2), transparent 24%),
+    linear-gradient(180deg, #09083a 0%, #120a45 46%, #060725 100%);
+  box-shadow: 0 30px 70px rgba(10, 9, 32, 0.25);
 }
 
-.phone header {
+.screen {
+  min-height: calc(100% - 4px);
+  padding: 18px 8px 26px;
+}
+
+.app-topbar,
+.brand-lockup {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.phone button {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+.brand-lockup {
+  justify-content: flex-start;
+  gap: 12px;
+  font-size: 20px;
+}
+
+.app-topbar a {
+  color: #aa9bed;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 50% 78%, #ffd66b 0 22%, transparent 23%),
+    radial-gradient(circle at 50% 80%, #ff6e72 0 42%, transparent 43%),
+    linear-gradient(135deg, #3924a8, #a94df5);
+}
+
+.progress-row {
+  margin: 30px 0 26px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.progress-row span {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(170, 155, 237, 0.24);
+}
+
+.progress-row .is-active {
+  background: #9ff2dc;
+}
+
+.sleep-scene {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 74% 74%, #ffdb84 0 9%, transparent 10%),
+    radial-gradient(circle at 72% 78%, rgba(255, 92, 113, 0.55), transparent 22%),
+    linear-gradient(180deg, #12124f 0%, #35165f 62%, #12092d 100%);
+}
+
+.moon {
+  position: absolute;
+  top: 72px;
+  left: 52px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: transparent;
-  color: #fff;
-  font-size: 24px;
+  background: #d8c8ff;
+  box-shadow: 12px -4px 0 #12124f inset;
 }
 
-.app-content {
-  padding-top: 90px;
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
 }
 
-.app-content p {
-  color: rgba(255, 255, 255, 0.62);
+.star-one {
+  top: 48px;
+  left: 170px;
 }
 
-.app-content h1 {
-  margin: 0 0 28px;
-  font-size: 34px;
+.star-two {
+  top: 120px;
+  right: 58px;
+}
+
+.star-three {
+  top: 156px;
+  left: 220px;
+}
+
+.ridge {
+  position: absolute;
+  right: -40px;
+  bottom: 0;
+  left: -40px;
+  height: 110px;
+  border-radius: 48% 52% 0 0;
+}
+
+.ridge-back {
+  bottom: 48px;
+  background: rgba(18, 21, 80, 0.88);
+  transform: rotate(6deg);
+}
+
+.ridge-mid {
+  bottom: 24px;
+  background: rgba(12, 17, 65, 0.94);
+  transform: rotate(-5deg);
+}
+
+.ridge-front {
+  background: #070b31;
+}
+
+.intro-copy {
+  margin-top: -8px;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-copy h1 {
+  margin: 0 0 26px;
+  font-size: 36px;
   line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
-.app-content article {
-  margin-top: 14px;
+.intro-copy h1 em {
+  color: #9ff2dc;
+  font-style: normal;
+}
+
+.value-card {
+  margin-top: 12px;
+  padding: 18px;
+  border: 1px solid rgba(159, 242, 220, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 14px;
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(159, 242, 220, 0.12);
+  display: grid;
+  place-items: center;
+}
+
+.card-icon::before {
+  color: #9ff2dc;
+  font-size: 32px;
+}
+
+.shield-icon::before {
+  content: "✓";
+}
+
+.clock-icon::before {
+  content: "◷";
+}
+
+.value-card strong,
+.recommendation-grid strong {
+  display: block;
+  font-size: 19px;
+}
+
+.value-card p,
+.recommendation-grid p {
+  margin: 7px 0 0;
+  color: rgba(232, 229, 255, 0.72);
+  line-height: 1.45;
+}
+
+.primary-action {
+  min-height: 64px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8df0d0, #d5f4ff);
+  color: #09083a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.secure-note {
+  margin: 18px 0 0;
+  color: #aa9bed;
+  text-align: center;
+}
+
+.question-screen,
+.result-screen {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #9ff2dc;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.question-screen h2,
+.result-screen h2 {
+  margin: 0 0 22px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.choice-list {
+  display: grid;
+  gap: 12px;
+}
+
+.choice-list button {
+  min-height: 58px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+}
+
+.recommendation-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.recommendation-grid article {
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 8px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.08);
-}
-
-.app-content strong,
-.app-content span {
-  display: block;
-}
-
-.app-content span {
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.45;
 }

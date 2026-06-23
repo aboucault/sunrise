@@ -76,7 +76,9 @@ button {
 }
 
 .masthead {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   min-height: var(--masthead-height);
   padding: 0 var(--space-7);
   border-bottom: 1px solid var(--color-line-strong);
@@ -100,13 +102,22 @@ button {
 
 .locale-link,
 .nav-link {
+  position: relative;
   font-size: var(--text-nav);
   line-height: 1;
   white-space: nowrap;
 }
 
 .nav-link.is-active {
-  padding-bottom: var(--space-1);
+  border-bottom: 0;
+}
+
+.nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--space-1) * -1);
+  left: 0;
   border-bottom: 1px solid var(--color-ink);
 }
 
@@ -125,9 +136,12 @@ button {
 }
 
 .wordmark span {
+  display: inline-block;
   margin: 0 2px;
   font-family: var(--font-body);
   font-weight: 400;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .order-button {

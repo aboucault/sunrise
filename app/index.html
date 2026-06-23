@@ -7,23 +7,84 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="app-shell">
+    <main class="app-shell" aria-label="Sunrise app prototype">
       <section class="phone">
-        <header>
-          <span>sun✳rise</span>
-          <button type="button">+</button>
-        </header>
-        <section class="app-content">
-          <p>Home</p>
-          <h1>Continuez à comprendre votre sommeil</h1>
-          <article>
-            <strong>Conseil du soir</strong>
-            <span>Essayez un support latéral avec un oreiller pour limiter les retours sur le dos.</span>
-          </article>
-          <article>
-            <strong>À suivre demain matin</strong>
-            <span>Fatigue, bouche sèche, maux de tête, ronflement signalé.</span>
-          </article>
+        <section class="screen intro-screen" aria-labelledby="intro-title">
+          <header class="app-topbar">
+            <div class="brand-lockup">
+              <div class="app-icon" aria-hidden="true"></div>
+              <strong>Sunrise</strong>
+            </div>
+            <a href="../website/apnee-du-sommeil.html">Skip</a>
+          </header>
+
+          <div class="progress-row" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="sleep-scene" aria-hidden="true">
+            <span class="moon"></span>
+            <span class="star star-one"></span>
+            <span class="star star-two"></span>
+            <span class="star star-three"></span>
+            <span class="sunrise"></span>
+            <span class="ridge ridge-back"></span>
+            <span class="ridge ridge-mid"></span>
+            <span class="ridge ridge-front"></span>
+          </div>
+
+          <section class="intro-copy">
+            <h1 id="intro-title">Is your sleep more than a <em>rough patch?</em></h1>
+            <article class="value-card">
+              <span class="card-icon shield-icon" aria-hidden="true"></span>
+              <div>
+                <strong>Personalized guidance</strong>
+                <p>Get clear next steps based on your answers, not a diagnosis.</p>
+              </div>
+            </article>
+            <article class="value-card">
+              <span class="card-icon clock-icon" aria-hidden="true"></span>
+              <div>
+                <strong>Takes about a minute</strong>
+                <p>A few quick questions to understand what may be disrupting your sleep.</p>
+              </div>
+            </article>
+            <a class="primary-action" href="#sleep-check">Let's get started</a>
+            <p class="secure-note">Private & secure</p>
+          </section>
+        </section>
+
+        <section id="sleep-check" class="screen question-screen" aria-labelledby="question-title">
+          <p class="eyebrow">Sleep check</p>
+          <h2 id="question-title">What have you already tried?</h2>
+          <div class="choice-list">
+            <button type="button">Changing sleep position</button>
+            <button type="button">Meditation or breathing</button>
+            <button type="button">Tracking symptoms</button>
+            <button type="button">Talking to a doctor without clear answers</button>
+          </div>
+        </section>
+
+        <section class="screen result-screen" aria-labelledby="result-title">
+          <p class="eyebrow">Your next steps</p>
+          <h2 id="result-title">Start with the smallest useful experiment.</h2>
+          <div class="recommendation-grid">
+            <article>
+              <strong>Tonight</strong>
+              <p>Try side-sleeping guidance and a short wind-down meditation.</p>
+            </article>
+            <article>
+              <strong>Learn</strong>
+              <p>Free education explains symptoms, sleep apnea signals, and when testing may help.</p>
+            </article>
+            <article>
+              <strong>Paid plan</strong>
+              <p>Unlock coaching, weekly check-ins, and the option to order a home sleep test.</p>
+            </article>
+          </div>
         </section>
       </section>
     </main>
