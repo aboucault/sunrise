@@ -154,10 +154,27 @@ button {
 }
 
 .sleep-page {
+  position: relative;
   min-height: calc(100vh - var(--masthead-height));
+  overflow: clip;
+}
+
+.sleep-hero-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: min(62vh, 620px);
+  object-fit: cover;
+  object-position: center bottom;
+  pointer-events: none;
 }
 
 .quiz-hero {
+  position: relative;
+  z-index: 1;
   min-height: calc(100vh - var(--masthead-height));
   padding: var(--space-10) var(--space-7) var(--space-6);
   text-align: center;
@@ -202,6 +219,8 @@ button {
 }
 
 .quiz-card {
+  position: relative;
+  z-index: 1;
   width: min(100%, var(--page-max));
   margin: 0 auto;
   padding: var(--space-6);
@@ -729,6 +748,11 @@ button {
 
   .quiz-hero {
     padding: var(--space-8) var(--space-4) var(--space-5);
+  }
+
+  .sleep-hero-video {
+    height: min(54vh, 460px);
+    object-position: 58% bottom;
   }
 
   .hero-subtitle {
