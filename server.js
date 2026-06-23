@@ -18,7 +18,7 @@ const contentTypes = {
 
 http
   .createServer((req, res) => {
-    const requestPath = req.url === '/' ? '/index.html' : req.url;
+    const requestPath = req.url === '/' ? '/website/apnee-du-sommeil.html' : req.url;
     const safePath = path.normalize(requestPath).replace(/^(\.\.[/\\])+/, '');
     const filePath = path.join(root, safePath);
 
