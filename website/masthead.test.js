@@ -34,13 +34,20 @@ test('sleep hero video is contained by the hero block instead of fixed to the vi
 });
 
 test('website pages request versioned stylesheet to avoid stale production CSS', () => {
+  const stylesheetName = 'styles-2208b4e.css';
+
+  assert.ok(
+    fs.existsSync(path.join(__dirname, stylesheetName)),
+    'expected versioned stylesheet file to exist',
+  );
+
   for (const page of ['apnee-du-sommeil.html', 'blog.html', 'commander.html']) {
     const html = fs.readFileSync(path.join(__dirname, page), 'utf8');
 
     assert.match(
       html,
-      /<link rel="stylesheet" href="\.\/styles\.css\?v=[^"]+" \/>/,
-      `${page} should cache-bust styles.css`,
+      new RegExp(`<link rel="stylesheet" href="\\.\\/${stylesheetName}" \\/>`),
+      `${page} should request the versioned stylesheet file`,
     );
   }
 });
