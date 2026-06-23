@@ -13,6 +13,7 @@
                 <section
                     class="screen intro-screen"
                     aria-labelledby="intro-title"
+                    id="intro"
                 >
                     <header class="app-topbar">
                         <div class="brand-lockup">
@@ -70,13 +71,208 @@
                             </div>
                         </article>
                         <footer class="intro-footer">
-                            <a
-                                class="primary-action"
-                                href="../website/apnee-du-sommeil.html"
+                            <a class="primary-action" href="#questionnaire"
                                 >Let's get started</a
                             >
                             <p class="secure-note">Private & secure</p>
                         </footer>
+                    </section>
+                </section>
+
+                <section
+                    class="screen questionnaire-screen"
+                    id="questionnaire"
+                    aria-labelledby="questionnaire-title"
+                >
+                    <header class="app-topbar">
+                        <div class="brand-lockup">
+                            <span class="app-icon" aria-hidden="true"
+                                >&#10035;</span
+                            >
+                            <strong>Sunrise</strong>
+                        </div>
+                        <a href="#intro">Back</a>
+                    </header>
+
+                    <div class="progress-row" aria-hidden="true">
+                        <span></span>
+                        <span class="is-active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <section class="questionnaire-copy">
+                        <p class="screen-kicker">Sleep check-in</p>
+                        <h2 id="questionnaire-title">What brought you here?</h2>
+                    </section>
+
+                    <form class="questionnaire-card">
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="concern" checked />
+                                Loud snoring or pauses in breathing
+                            </label>
+                            <label>
+                                <input type="radio" name="concern" />
+                                Waking tired after a full night
+                            </label>
+                            <label>
+                                <input type="radio" name="concern" />
+                                Trouble focusing during the day
+                            </label>
+                        </fieldset>
+
+                        <label class="select-field">
+                            How often does it happen?
+                            <select name="frequency">
+                                <option>Most nights</option>
+                                <option>A few nights a week</option>
+                                <option>Occasionally</option>
+                            </select>
+                        </label>
+
+                        <label class="range-field">
+                            Morning energy
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                value="2"
+                                name="energy"
+                            />
+                        </label>
+                        <footer class="intro-footer">
+                            <a class="primary-action" href="#story"
+                                >See my path</a
+                            >
+                        </footer>
+                    </form>
+
+                    <section
+                        class="screen story-screen"
+                        id="story"
+                        aria-labelledby="story-title"
+                    >
+                        <header class="app-topbar">
+                            <div class="brand-lockup">
+                                <span class="app-icon" aria-hidden="true"
+                                    >&#10035;</span
+                                >
+                                <strong>Sunrise</strong>
+                            </div>
+                            <a href="#questionnaire">Back</a>
+                        </header>
+
+                        <div class="progress-row" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span class="is-active"></span>
+                            <span></span>
+                        </div>
+
+                        <section class="story-panel emotional-panel">
+                            <div class="story-copy">
+                                <h3>Sleep shapes how you live.</h3>
+                                <p>
+                                    Better sleep is not only about nights. It
+                                    can change your energy, focus, patience, and
+                                    how present you feel during the day.
+                                </p>
+                            </div>
+                        </section>
+                        <section class="story-panel aha-panel">
+                            <div class="story-copy">
+                                <h3>
+                                    One clear signal can unlock the next step.
+                                </h3>
+                                <p>
+                                    Sunrise can help connect what happens during
+                                    sleep with what you feel during the day, so
+                                    coaching or a home test feels like a logical
+                                    next move instead of a leap.
+                                </p>
+                            </div>
+                            <div
+                                class="story-figure path-figure"
+                                aria-hidden="true"
+                            >
+                                <span class="path-node node-one"></span>
+                                <span class="path-node node-two"></span>
+                                <span class="path-node node-three"></span>
+                                <span class="path-node node-four"></span>
+                            </div>
+                        </section>
+                        <footer class="intro-footer">
+                            <a class="primary-action" href="#paywall"
+                                >Let's do something about it</a
+                            >
+                        </footer>
+                    </section>
+
+                    <section
+                        class="screen paywall-screen menu-preview"
+                        id="paywall"
+                        aria-label="Sunrise app menu preview"
+                    >
+                        <header class="app-topbar">
+                            <div class="brand-lockup">
+                                <span class="app-icon" aria-hidden="true"
+                                    >&#10035;</span
+                                >
+                                <strong>Sunrise</strong>
+                            </div>
+                            <a href="#intro-title">Back</a>
+                        </header>
+
+                        <div class="progress-row" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="is-active"></span>
+                        </div>
+                        <article class="menu-panel education-panel">
+                            <div>
+                                <span class="menu-label">Free</span>
+                                <h3>Education</h3>
+                                <p>
+                                    Short lessons on sleep apnea signs, risk
+                                    factors, and what to ask a clinician.
+                                </p>
+                            </div>
+                            <ul>
+                                <li>Sleep apnea basics</li>
+                                <li>Checklist for your next appointment</li>
+                                <li>Partner conversation guide</li>
+                            </ul>
+                        </article>
+
+                        <article class="menu-panel coaching-panel">
+                            <div>
+                                <span class="menu-label">EUR 2.99/month</span>
+                                <h3>Coaching</h3>
+                                <p>
+                                    Gentle nudges, habit tracking, and weekly
+                                    support while you prepare next steps.
+                                </p>
+                            </div>
+                            <ul>
+                                <li>Weekly sleep plan</li>
+                                <li>Symptom tracking</li>
+                                <li>Coach check-ins</li>
+                            </ul>
+                        </article>
+
+                        <article class="menu-panel kit-panel">
+                            <div>
+                                <span class="menu-label">Test kit</span>
+                                <h3>At-home test</h3>
+                                <p>
+                                    Order a Sunrise test kit when questionnaire
+                                    answers point to stronger screening needs.
+                                </p>
+                            </div>
+                            <a href="../website/commander.html">Buy kit</a>
+                        </article>
                     </section>
                 </section>
             </section>
