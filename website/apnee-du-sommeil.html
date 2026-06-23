@@ -1,79 +1,108 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunrise | Apnée du sommeil</title>
-    <link rel="icon" href="../assets/favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="masthead">
-      <nav class="masthead-left" aria-label="Navigation principale">
-        <a class="locale-link" href="#">EU</a>
-        <span class="nav-separator" aria-hidden="true"></span>
-        <a class="nav-link is-active" href="./apnee-du-sommeil.html">Apnée du sommeil</a>
-        <a class="nav-link" href="../app/index.html">App sommeil</a>
-        <a class="nav-link" href="#">Notre mission</a>
-        <a class="nav-link" href="./blog.html">Blog sommeil</a>
-      </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sunrise | Apnée du sommeil</title>
+        <link rel="icon" href="../assets/favicon.ico" sizes="any" />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <header class="masthead">
+            <nav class="masthead-left" aria-label="Navigation principale">
+                <a class="locale-link" href="#">EU</a>
+                <span class="nav-separator" aria-hidden="true"></span>
+                <a class="nav-link is-active" href="./apnee-du-sommeil.html"
+                    >Apnée du sommeil</a
+                >
+                <a class="nav-link" href="../app/index.html">App sommeil</a>
+                <a class="nav-link" href="#">Notre mission</a>
+                <a class="nav-link" href="./blog.html">Blog sommeil</a>
+            </nav>
 
-      <a class="wordmark" href="./apnee-du-sommeil.html" aria-label="Sunrise">sun<span>✳</span>rise</a>
+            <a
+                class="wordmark"
+                href="./apnee-du-sommeil.html"
+                aria-label="Sunrise"
+                >sun<span>✳</span>rise</a
+            >
 
-      <nav class="masthead-right" aria-label="Navigation secondaire">
-        <a class="nav-link" href="#">Particuliers</a>
-        <a class="nav-link" href="#">Professionnels</a>
-        <a class="order-button" href="./commander.html">Commander</a>
-      </nav>
-    </header>
+            <nav class="masthead-right" aria-label="Navigation secondaire">
+                <a class="nav-link" href="#">Particuliers</a>
+                <a class="nav-link" href="#">Professionnels</a>
+                <a class="order-button" href="./commander.html">Commander</a>
+            </nav>
+        </header>
 
-    <main class="sleep-page">
-      <video
-        class="sleep-hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        aria-hidden="true"
-      >
-        <source src="../assets/header_page_apnea.mp4" type="video/mp4" />
-      </video>
-      <section class="quiz-hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">
-          <span>Et si votre sommeil cachait</span>
-          <em>plus qu’un simple coup de fatigue ?</em>
-          <span class="sleep-mark">z<sup>z</sup>.</span>
-        </h1>
-        <p class="hero-subtitle">Dans 80% du temps, on ignore qu'on souffre d'apnée du sommeil.<br />
-        Sunrise veut faciliter l'accès au diagnostic, faites-le test pour en savoir plus.</p>
+        <main class="sleep-page">
+            <section class="quiz-hero" aria-labelledby="hero-title">
+                <h1 id="hero-title">
+                    <span>Et si votre sommeil cachait</span>
+                    <em>plus qu’un simple coup de fatigue ?</em>
+                    <span class="sleep-mark">z<sup>z</sup>.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Dans 80% du temps, on ignore qu'on souffre d'apnée du
+                    sommeil.<br />
+                    Sunrise veut faciliter l'accès au diagnostic, faites-le test
+                    pour en savoir plus.
+                </p>
 
-        <section class="quiz-card" aria-label="Test rapide apnee du sommeil">
-          <div class="progress-track" aria-hidden="true">
-            <div id="progress-fill" class="progress-fill"></div>
-          </div>
+                <section
+                    class="quiz-card"
+                    aria-label="Test rapide apnee du sommeil"
+                >
+                    <div class="progress-track" aria-hidden="true">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
 
-          <p id="progress-label" class="question-count">Question 1 sur 5</p>
-          <div id="question-root"></div>
+                    <p id="progress-label" class="question-count">
+                        Question 1 sur 5
+                    </p>
+                    <div id="question-root"></div>
 
-          <footer class="quiz-card-footer">
-            <p>Vos réponses sont privées et sécurisées.</p>
-            <div class="quiz-actions">
-              <button id="back-button" class="back-link" type="button">Retour</button>
-              <button id="continue-button" class="continue-button" type="button" disabled>Continuer</button>
-            </div>
-          </footer>
-        </section>
+                    <footer class="quiz-card-footer">
+                        <p>Vos réponses sont privées et sécurisées.</p>
+                        <div class="quiz-actions">
+                            <button
+                                id="back-button"
+                                class="back-link"
+                                type="button"
+                            >
+                                Retour
+                            </button>
+                            <button
+                                id="continue-button"
+                                class="continue-button"
+                                type="button"
+                                disabled
+                            >
+                                Continuer
+                            </button>
+                        </div>
+                    </footer>
+                </section>
+            </section>
+            <video
+                class="sleep-hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
+            >
+                <source
+                    src="../assets/header_page_apnea.mp4"
+                    type="video/mp4"
+                />
+            </video>
+        </main>
 
-        <p class="privacy-note">
-          <span aria-hidden="true">▢</span>
-          Aucune donnée n’est partagée sans votre accord.
-        </p>
-      </section>
-    </main>
+        <button class="chat-button" type="button" aria-label="Ouvrir le chat">
+            ▰
+        </button>
 
-    <button class="chat-button" type="button" aria-label="Ouvrir le chat">▰</button>
-
-    <script src="./quiz.js"></script>
-    <script src="./masthead.js"></script>
-  </body>
+        <script src="./quiz.js"></script>
+        <script src="./masthead.js"></script>
+    </body>
 </html>
