@@ -4,7 +4,8 @@ const path = require('node:path');
 const test = require('node:test');
 
 const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
-const css = fs.readFileSync(path.join(__dirname, 'styles.css'), 'utf8');
+const stylesheetName = 'styles-521a29e.css';
+const css = fs.readFileSync(path.join(__dirname, stylesheetName), 'utf8');
 
 test('intro call to action opens the questionnaire screen', () => {
   assert.match(
@@ -21,7 +22,11 @@ test('app uses app-scoped assets on routed URLs', () => {
   );
   assert.match(
     html,
-    /<link rel="stylesheet" href="\/app\/styles\.css" \/>/,
+    new RegExp(`<link rel="stylesheet" href="/app/${stylesheetName}" />`),
+  );
+  assert.ok(
+    fs.existsSync(path.join(__dirname, stylesheetName)),
+    'expected versioned app stylesheet file to exist',
   );
 });
 
