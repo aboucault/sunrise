@@ -160,10 +160,12 @@ button {
 }
 
 .sleep-hero-video {
-    display: block;
-    width: calc(100% + var(--space-7) + var(--space-7));
-    margin: var(--space-8) calc(0px - var(--space-7))
-        calc(0px - var(--space-6));
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
     height: min(62vh, 620px);
     object-fit: cover;
     object-position: center bottom;
@@ -770,10 +772,6 @@ button {
     }
 
     .sleep-hero-video {
-        width: calc(100% + var(--space-4) + var(--space-4));
-        margin-right: calc(0px - var(--space-4));
-        margin-bottom: calc(0px - var(--space-5));
-        margin-left: calc(0px - var(--space-4));
         height: min(54vh, 460px);
         object-position: 58% bottom;
     }
