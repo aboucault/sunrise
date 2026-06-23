@@ -32,20 +32,47 @@ const state = {
 };
 
 const questionRoot = document.getElementById('question-root');
-const progressFill = document.getElementById('progress-fill');
 const progressLabel = document.getElementById('progress-label');
+const backButton = document.getElementById('back-button');
 const continueButton = document.getElementById('continue-button');
+const quizCard = document.querySelector('.quiz-card');
 
 function selectedAnswer() {
   return state.answers[state.index];
 }
 
+function resultDestination() {
+  const preference = state.answers[questions.length - 1];
+
+  if (preference === 1) {
+    return {
+      href: '../app/index.html',
+      label: "Continuer dans l'app",
+      helper: 'Pour mieux comprendre avant de commander.'
+    };
+  }
+
+  if (preference === 2) {
+    return {
+      href: './blog.html',
+      label: 'Lire le blog sommeil',
+      helper: 'Pour revenir au test plus tard.'
+    };
+  }
+
+  return {
+    href: './commander.html',
+    label: 'Commander le kit Sunrise',
+    helper: 'Pour passer du doute a une prochaine etape concrete.'
+  };
+}
+
 function renderQuestion() {
   const question = questions[state.index];
-  const progress = ((state.index + 1) / questions.length) * 100;
 
-  progressFill.style.width = `${progress}%`;
+  quizCard.dataset.progress = String(state.index + 1);
   progressLabel.textContent = `Question ${state.index + 1} sur ${questions.length}`;
+  backButton.hidden = state.index === 0;
   continueButton.disabled = selectedAnswer() === undefined;
   continueButton.textContent = state.index === questions.length - 1 ? 'Voir mon résultat' : 'Continuer';
 
@@ -77,9 +104,11 @@ function renderQuestion() {
 function renderResult() {
   const score = state.answers.reduce((sum, answer) => sum + (2 - answer), 0);
   const highSignal = score >= 7;
+  const destination = resultDestination();
 
-  progressFill.style.width = '100%';
+  quizCard.dataset.progress = String(questions.length);
   progressLabel.textContent = 'Résultat';
+  backButton.hidden = false;
   continueButton.textContent = 'Recommencer';
   continueButton.disabled = false;
 
@@ -93,8 +122,9 @@ function renderResult() {
       }
     </p>
     <div class="result-action">
-      <strong>${highSignal ? 'Commander le kit Sunrise' : "Continuer dans l'app"}</strong>
-      <span>Orientation non diagnostique.</span>
+      <strong>${destination.label}</strong>
+      <span>${destination.helper} Orientation non diagnostique.</span>
+      <a class="result-button" href="${destination.href}">${destination.label}</a>
     </div>
   `;
 }
@@ -116,6 +146,20 @@ continueButton.addEventListener('click', () => {
   if (state.index === questions.length) {
     renderResult();
     return;
+  }
+
+  renderQuestion();
+});
+
+backButton.addEventListener('click', () => {
+  if (state.index === 0) {
+    return;
+  }
+
+  if (state.index === questions.length) {
+    state.index = questions.length - 1;
+  } else {
+    state.index -= 1;
   }
 
   renderQuestion();

@@ -1,54 +1,151 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunrise | Blog sommeil</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="masthead">
-      <nav class="masthead-left" aria-label="Navigation principale">
-        <a class="locale-link" href="#">EU</a>
-        <span class="nav-separator" aria-hidden="true"></span>
-        <a class="nav-link" href="./apnee-du-sommeil.html">Apnée du sommeil</a>
-        <a class="nav-link" href="#">Science du sommeil</a>
-        <a class="nav-link" href="#">Notre mission</a>
-        <a class="nav-link is-active" href="./blog.html">Blog sommeil</a>
-      </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sunrise | Blog sommeil</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <header class="masthead">
+            <nav class="masthead-left" aria-label="Navigation principale">
+                <a class="locale-link" href="#">EU</a>
+                <span class="nav-separator" aria-hidden="true"></span>
+                <a class="nav-link" href="./apnee-du-sommeil.html"
+                    >Apnée du sommeil</a
+                >
+                <a class="nav-link" href="#">Science du sommeil</a>
+                <a class="nav-link" href="#">Notre mission</a>
+                <a class="nav-link is-active" href="./blog.html"
+                    >Blog sommeil</a
+                >
+            </nav>
 
-      <a class="wordmark" href="./apnee-du-sommeil.html" aria-label="Sunrise">sun<span>✳</span>rise</a>
+            <a
+                class="wordmark"
+                href="./apnee-du-sommeil.html"
+                aria-label="Sunrise"
+                >sun<span>✳</span>rise</a
+            >
 
-      <nav class="masthead-right" aria-label="Navigation secondaire">
-        <a class="nav-link" href="#">Particuliers</a>
-        <a class="nav-link" href="#">Professionnels</a>
-        <a class="order-button" href="#">Commander</a>
-      </nav>
-    </header>
+            <nav class="masthead-right" aria-label="Navigation secondaire">
+                <a class="nav-link" href="#">Particuliers</a>
+                <a class="nav-link" href="#">Professionnels</a>
+                <a class="order-button" href="./commander.html">Commander</a>
+            </nav>
+        </header>
 
-    <main class="blog-page">
-      <section class="blog-intro">
-        <h1>Blog sommeil</h1>
-        <p>Des contenus simples pour capter les questions avant l’achat du kit et renvoyer vers le test rapide.</p>
-      </section>
+        <main class="blog-page blog-mock">
+            <section class="blog-toolbar" aria-labelledby="blog-title">
+                <h1 id="blog-title">Blog sommeil</h1>
+                <label class="blog-search">
+                    <span aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        placeholder="Rechercher un sujet, symptôme ou traitement..."
+                    />
+                </label>
+            </section>
 
-      <section class="article-grid" aria-label="Articles sommeil">
-        <article class="article-card">
-          <p>Fatigue au réveil</p>
-          <h2>Pourquoi je me réveille déjà épuisé ?</h2>
-          <a href="./apnee-du-sommeil.html">Faire le test</a>
-        </article>
-        <article class="article-card">
-          <p>Ronflement</p>
-          <h2>Quand un ronflement mérite plus d’attention</h2>
-          <a href="./apnee-du-sommeil.html">Explorer les signaux</a>
-        </article>
-        <article class="article-card">
-          <p>Sommeil quotidien</p>
-          <h2>Que suivre avant d’en parler à un professionnel ?</h2>
-          <a href="./apnee-du-sommeil.html">Commencer</a>
-        </article>
-      </section>
-    </main>
-  </body>
+            <nav class="topic-tabs" aria-label="Catégories du blog">
+                <button type="button">Tous</button>
+                <button class="is-active" type="button">
+                    Apnée du sommeil
+                </button>
+                <button type="button">Ronflement</button>
+                <button type="button">Fatigue</button>
+                <button type="button">Traitements</button>
+                <button type="button">Science du sommeil</button>
+                <button type="button">Conseils pratiques</button>
+                <button type="button">Vie quotidienne</button>
+            </nav>
+
+            <section class="featured-blog-card" aria-label="Article principal">
+                <div class="featured-blog-copy">
+                    <p>Apnée du sommeil</p>
+                    <h2>7 signes qui devraient vous alerter</h2>
+                    <span
+                        >Fatigue persistante, réveils nocturnes, somnolence en
+                        journée : comment reconnaître les premiers
+                        signaux.</span
+                    >
+                    <strong
+                        >8 min de lecture
+                        <span aria-hidden="true">→</span></strong
+                    >
+                </div>
+                <div
+                    class="featured-blog-image sleep-clock-image"
+                    aria-hidden="true"
+                ></div>
+            </section>
+
+            <section class="blog-card-grid" aria-label="Articles récents">
+                <article class="blog-preview-card">
+                    <div
+                        class="article-image kit-image"
+                        aria-hidden="true"
+                    ></div>
+                    <p>Diagnostic</p>
+                    <h2>Comment fonctionne un test du sommeil à domicile ?</h2>
+                    <strong
+                        >5 min de lecture
+                        <span aria-hidden="true">→</span></strong
+                    >
+                </article>
+                <article class="blog-preview-card">
+                    <div
+                        class="article-image tired-image"
+                        aria-hidden="true"
+                    ></div>
+                    <p>Fatigue</p>
+                    <h2>
+                        Pourquoi suis-je encore fatigué après 8 heures de
+                        sommeil ?
+                    </h2>
+                    <strong
+                        >6 min de lecture
+                        <span aria-hidden="true">→</span></strong
+                    >
+                </article>
+                <article class="blog-preview-card">
+                    <div
+                        class="article-image snore-image"
+                        aria-hidden="true"
+                    ></div>
+                    <p>Ronflement</p>
+                    <h2>Le ronflement : quand faut-il s’inquiéter ?</h2>
+                    <strong
+                        >4 min de lecture
+                        <span aria-hidden="true">→</span></strong
+                    >
+                </article>
+            </section>
+
+            <section class="blog-bottom-panel">
+                <div class="symptom-panel">
+                    <p>Explorer par symptôme</p>
+                    <div class="symptom-grid">
+                        <span>Fatigue au réveil <strong>→</strong></span>
+                        <span>Maux de tête matinaux <strong>→</strong></span>
+                        <span>Ronflement <strong>→</strong></span>
+                        <span>Somnolence diurne <strong>→</strong></span>
+                        <span>Réveils nocturnes <strong>→</strong></span>
+                        <span>Bouche sèche <strong>→</strong></span>
+                    </div>
+                </div>
+
+                <aside class="blog-test-panel">
+                    <p>Vous vous posez des questions sur votre sommeil ?</p>
+                    <span
+                        >Répondez à quelques questions pour savoir si un test à
+                        domicile mérite d’être envisagé.</span
+                    >
+                    <a href="./apnee-du-sommeil.html"
+                        >Faire le test rapide <strong>→</strong></a
+                    >
+                </aside>
+            </section>
+        </main>
+    </body>
 </html>
