@@ -14,12 +14,13 @@ test('sunRotationForScroll ignores negative scroll values', () => {
   assert.equal(sunRotationForScroll(-80), 0);
 });
 
-test('sleep hero video is rendered after the questionnaire', () => {
+test('sleep hero video is rendered inside the hero below the questionnaire', () => {
   const html = fs.readFileSync(path.join(__dirname, 'apnee-du-sommeil.html'), 'utf8');
 
-  assert.ok(
-    html.indexOf('<section class="quiz-hero"') < html.indexOf('<video'),
-    'expected the questionnaire section to appear before the video',
+  assert.match(
+    html,
+    /<section class="quiz-hero"[\s\S]*<section\s+class="quiz-card"[\s\S]*<\/section>\s*<video[\s\S]*<\/video>\s*<\/section>\s*<\/main>/,
+    'expected the video to stay inside the hero below the quiz card',
   );
 });
 
