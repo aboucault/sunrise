@@ -1,93 +1,85 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sunrise | App concept</title>
-    <link rel="icon" href="../assets/favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <main class="app-shell" aria-label="Sunrise app prototype">
-      <section class="phone">
-        <section class="screen intro-screen" aria-labelledby="intro-title">
-          <header class="app-topbar">
-            <div class="brand-lockup">
-              <div class="app-icon" aria-hidden="true"></div>
-              <strong>Sunrise</strong>
-            </div>
-            <a href="../website/apnee-du-sommeil.html">Skip</a>
-          </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sunrise | App concept</title>
+        <link rel="icon" href="../assets/favicon.ico" sizes="any" />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <main class="app-shell" aria-label="Sunrise app prototype">
+            <section class="phone">
+                <section
+                    class="screen intro-screen"
+                    aria-labelledby="intro-title"
+                >
+                    <header class="app-topbar">
+                        <div class="brand-lockup">
+                            <span class="app-icon" aria-hidden="true"
+                                >&#10035;</span
+                            >
+                            <strong>Sunrise</strong>
+                        </div>
+                        <a href="../website/apnee-du-sommeil.html">Skip</a>
+                    </header>
 
-          <div class="progress-row" aria-hidden="true">
-            <span class="is-active"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+                    <div class="progress-row" aria-hidden="true">
+                        <span class="is-active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
 
-          <div class="sleep-scene" aria-hidden="true">
-            <span class="moon"></span>
-            <span class="star star-one"></span>
-            <span class="star star-two"></span>
-            <span class="star star-three"></span>
-            <span class="sunrise"></span>
-            <span class="ridge ridge-back"></span>
-            <span class="ridge ridge-mid"></span>
-            <span class="ridge ridge-front"></span>
-          </div>
+                    <div class="sleep-scene" aria-hidden="true">
+                        <span class="moon"></span>
+                        <span class="star star-one"></span>
+                        <span class="star star-two"></span>
+                        <span class="star star-three"></span>
+                        <span class="sunrise"></span>
+                        <span class="ridge ridge-back"></span>
+                        <span class="ridge ridge-mid"></span>
+                        <span class="ridge ridge-front"></span>
+                    </div>
 
-          <section class="intro-copy">
-            <h1 id="intro-title">Is your sleep more than a <em>rough patch?</em></h1>
-            <article class="value-card">
-              <span class="card-icon shield-icon" aria-hidden="true"></span>
-              <div>
-                <strong>Personalized guidance</strong>
-                <p>Get clear next steps based on your answers, not a diagnosis.</p>
-              </div>
-            </article>
-            <article class="value-card">
-              <span class="card-icon clock-icon" aria-hidden="true"></span>
-              <div>
-                <strong>Takes about a minute</strong>
-                <p>A few quick questions to understand what may be disrupting your sleep.</p>
-              </div>
-            </article>
-            <a class="primary-action" href="#sleep-check">Let's get started</a>
-            <p class="secure-note">Private & secure</p>
-          </section>
-        </section>
-
-        <section id="sleep-check" class="screen question-screen" aria-labelledby="question-title">
-          <p class="eyebrow">Sleep check</p>
-          <h2 id="question-title">What have you already tried?</h2>
-          <div class="choice-list">
-            <button type="button">Changing sleep position</button>
-            <button type="button">Meditation or breathing</button>
-            <button type="button">Tracking symptoms</button>
-            <button type="button">Talking to a doctor without clear answers</button>
-          </div>
-        </section>
-
-        <section class="screen result-screen" aria-labelledby="result-title">
-          <p class="eyebrow">Your next steps</p>
-          <h2 id="result-title">Start with the smallest useful experiment.</h2>
-          <div class="recommendation-grid">
-            <article>
-              <strong>Tonight</strong>
-              <p>Try side-sleeping guidance and a short wind-down meditation.</p>
-            </article>
-            <article>
-              <strong>Learn</strong>
-              <p>Free education explains symptoms, sleep apnea signals, and when testing may help.</p>
-            </article>
-            <article>
-              <strong>Paid plan</strong>
-              <p>Unlock coaching, weekly check-ins, and the option to order a home sleep test.</p>
-            </article>
-          </div>
-        </section>
-      </section>
-    </main>
-  </body>
+                    <section class="intro-copy">
+                        <h1 id="intro-title">
+                            Is your sleep more than a <em>rough patch?</em>
+                        </h1>
+                        <article class="value-card">
+                            <span
+                                class="card-icon shield-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <div>
+                                <strong>Personalized guidance</strong>
+                                <p>Get clear next steps, not a diagnosis.</p>
+                            </div>
+                        </article>
+                        <article class="value-card">
+                            <span
+                                class="card-icon clock-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <div>
+                                <strong>Takes about a minute</strong>
+                                <p>
+                                    Understand what may be disrupting your
+                                    sleep.
+                                </p>
+                            </div>
+                        </article>
+                        <footer class="intro-footer">
+                            <a
+                                class="primary-action"
+                                href="../website/apnee-du-sommeil.html"
+                                >Let's get started</a
+                            >
+                            <p class="secure-note">Private & secure</p>
+                        </footer>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </body>
 </html>
